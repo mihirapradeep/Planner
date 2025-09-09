@@ -8,6 +8,7 @@ print(' Our team of experts crafts custom applications that
 perfectly align with your daily needs\n')
 print(' !!!!!!!!!!! DISCLAIMER: Dear users, we follow 
 a 24 hour system !!!!!!!!!!!!!!!\n')
+
 import csv
 print('1. Do you want to create a new table')
 print('2. Do you want to open an already existing table')
@@ -19,19 +20,20 @@ while True:
     f= open(p+'.csv','w',newline='')
     cw=csv.writer(f)
 
-  h=['Task','From Time','To Time','Time Taken']
-  cw.writerow(h)
-  while True:
-    a=input ("Task: ")
-    b=int(input('From Time: '))
-    c=int(input('End Time:'))
-    d=c-b
-    e=[a,b,c,d]
-    cw.writerow(e)
-    print('Do you want to continue?')
-    j=input('Enter n if NO: ')
-    if j in 'nN':
-      break
+    h=['Task','From Time','To Time','Time Taken']
+    cw.writerow(h)
+    while True:
+      a=input ("Task: ")
+      b=int(input('From Time: '))
+      c=int(input('End Time:'))
+      d=c-b
+      e=[a,b,c,d]
+      cw.writerow(e)
+
+      print('Do you want to continue?')
+      j=input('Enter n if NO: ')
+      if j in 'nN':
+        break
   f.close()
   f= open(p+'.csv','r')
   cr=csv.reader(f)
