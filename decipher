@@ -65,29 +65,29 @@ while True:
           g=[k,j,l,t]
           cw.writerow(g)
           f.close()
-      elif a==2:
-        f= open(p+'.csv','r')
-        cr=csv.reader(f)
-        d=input('Enter job to delete: ')
+        elif a==2:
+          f= open(p+'.csv','r')
+          cr=csv.reader(f)
+          d=input('Enter job to delete: ')
 
-        k=[]
+          k=[]
 
-        for i in cr:
-          if i[0]==d:
-            pass
-          elif i[0]!=d:
-            k.append(i)
-          else:
-            print('TASK NOT FOUND')
-        f.close()
-        f= open(p+'.csv','w',newline='')
-        cw=csv.writer(f)
-        for i in k:
-          cw.writerow(i)
-        f.close()
+          for i in cr:
+            if i[0]==d:
+              pass
+            elif i[0]!=d:
+              k.append(i)
+            else:
+              print('TASK NOT FOUND')
+          f.close()
+          f= open(p+'.csv','w',newline='')
+          cw=csv.writer(f)
+          for i in k:
+            cw.writerow(i)
+          f.close()
 
-  else:
-    print('OPTION NOT AVAILABLE!!!!!!!!!')
+        else:
+          print('OPTION NOT AVAILABLE!!!!!!!!!')
 print('Your table is prepared')
 f= open(p+'.csv','r')
 cr=csv.reader(f)
