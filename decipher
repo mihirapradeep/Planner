@@ -1,0 +1,159 @@
+print('\t\t\t\tDECIPHER')
+print('\t\t Take Control of Your Life With Decipher ')
+print(' Our planning tools and resources help you stay 
+organized and achieve your personal and professional goals')
+print('\tUnlock new possibilities of a perfect planner with 
+Deciphers bespoke software planner')
+print(' Our team of experts crafts custom applications that 
+perfectly align with your daily needs\n')
+print(' !!!!!!!!!!! DISCLAIMER: Dear users, we follow 
+a 24 hour system !!!!!!!!!!!!!!!\n')
+import csv
+print('1. Do you want to create a new table')
+print('2. Do you want to open an already existing table')
+a=int(input('Enter Choice : '))
+while True:
+  if a==1:
+    p=input('Enter Table Name:')
+    f= open(p+'.csv','w',newline='')
+    cw=csv.writer(f)
+
+  h=['Task','From Time','To Time','Time Taken']
+  cw.writerow(h)
+  while True:
+    a=input ("Task: ")
+    b=int(input('From Time: '))
+    c=int(input('End Time:'))
+    d=c-b
+    e=[a,b,c,d]
+    cw.writerow(e)
+    print('Do you want to continue?')
+    j=input('Enter n if NO: ')
+    if j in 'nN':
+      break
+  f.close()
+  f= open(p+'.csv','r')
+  cr=csv.reader(f)
+  for i in cr:
+    print('\n')
+    for j in range(len(i)):
+    print(i[j],end='\t\t')
+  f.close()
+
+  while True:
+    print('\nDo you want to make any changes')
+    n= input('Enter n if no: ')
+    if n in'nN':
+      break
+    else:
+    print('1.Add')
+    print('2.Delete')
+    a=int(input('Enter Choice:'))
+    if a==1:
+      f= open(p+'.csv','a',newline='')
+      cw=csv.writer(f)
+      k=input('Task: ')
+      j=int(input('Start Time: '))
+      l=int(input('End Time: '))
+      t=l-j
+      g=[k,j,l,t]
+      cw.writerow(g)
+      f.close()
+    elif a==2:
+      f= open(p+'.csv','r')
+      cr=csv.reader(f)
+      d=input('Enter job to delete: ')
+    k=[]
+
+    for i in cr:
+      if i[0]==d:
+        pass
+      elif i[0]!=d:
+        k.append(i)
+      else:
+      print('TASK NOT FOUND')
+    f.close()
+    f= open(p+'.csv','w',newline='')
+    cw=csv.writer(f)
+    for i in k:
+      cw.writerow(i)
+    f.close()
+  else:
+    print('OPTION NOT AVAILABLE!!!!!!!!!')
+print('Your table is prepared')
+f= open(p+'.csv','r')
+cr=csv.reader(f)
+for i in cr:
+  print('\n')
+  for j in range(len(i)):
+    print(i[j],end='\t\t')
+f.close()
+
+print('\n')
+break
+elif a==2:
+  p=input('Enter Table Name:') 
+  f= open(p+'.csv','r')
+  cr=csv.reader(f)
+  for i in cr:
+    print('\n')
+    for j in range(len(i)):
+      print(i[j],end='\t\t')
+  f.close()
+  while True:
+    print('\nDo you want to make any changes')
+    n= input('Enter n if NO: ')
+    if n in'nN':
+      break
+    else:
+      print('1. Add')
+      print('2. Delete')
+      a=int(input('Enter Choice: '))
+      if a==1:
+        f= open(p+'.csv','a',newline='')
+        cw=csv.writer(f)
+        k=input('Task: ')
+        j=int(input('Start Time: '))
+        l=int(input('End Time: '))
+      
+        t=l-j
+        g=[k,j,l,t]
+        cw.writerow(g)
+        f.close()
+      elif a==2:
+        f= open(p+'.csv','r')
+        cr=csv.reader(f)
+        d=input('Enter task to delete: ')
+        k=[]
+        for i in cr:
+        if i[0]==d:
+          pass
+        elif i[0]!=d:
+        k.append(i)
+        else:
+          print('TASK NOT FOUND')
+      f.close()
+      f= open(p+'.csv','w',newline='')
+      cw=csv.writer(f)
+      for i in k:
+      cw.writerow(i)
+    f.close()
+  
+  else:
+    print('OPTION NOT AVAILABLE')
+  print('Your table is prepared')
+  f= open(p+'.csv','r')
+  cr=csv.reader(f)
+  for i in cr:
+    print('\n')
+  for j in range(len(i)):
+    print(i[j],end='\t\t')
+  f.close()
+  print('\n') 
+  break
+print('\n')
+print('\n')
+print("\n\t\tThank you for trusting Decipher with your 
+organizational needs!!!")
+print("\tWe're always thrilled to welcome you back in creating a 
+more structured and fulfilling life")
