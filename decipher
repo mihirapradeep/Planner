@@ -15,6 +15,7 @@ a=int(input('Enter Choice : '))
 while True:
   if a==1:
     p=input('Enter Table Name:')
+
     f= open(p+'.csv','w',newline='')
     cw=csv.writer(f)
 
