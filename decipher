@@ -58,32 +58,34 @@ while True:
           f= open(p+'.csv','a',newline='')
           cw=csv.writer(f)
 
-      k=input('Task: ')
-      j=int(input('Start Time: '))
-      l=int(input('End Time: '))
-      t=l-j
-      g=[k,j,l,t]
-      cw.writerow(g)
-      f.close()
-    elif a==2:
-      f= open(p+'.csv','r')
-      cr=csv.reader(f)
-      d=input('Enter job to delete: ')
-    k=[]
+          k=input('Task: ')
+          j=int(input('Start Time: '))
+          l=int(input('End Time: '))
+          t=l-j
+          g=[k,j,l,t]
+          cw.writerow(g)
+          f.close()
+      elif a==2:
+        f= open(p+'.csv','r')
+        cr=csv.reader(f)
+        d=input('Enter job to delete: ')
 
-    for i in cr:
-      if i[0]==d:
-        pass
-      elif i[0]!=d:
-        k.append(i)
-      else:
-      print('TASK NOT FOUND')
-    f.close()
-    f= open(p+'.csv','w',newline='')
-    cw=csv.writer(f)
-    for i in k:
-      cw.writerow(i)
-    f.close()
+        k=[]
+
+        for i in cr:
+          if i[0]==d:
+            pass
+          elif i[0]!=d:
+            k.append(i)
+          else:
+            print('TASK NOT FOUND')
+        f.close()
+        f= open(p+'.csv','w',newline='')
+        cw=csv.writer(f)
+        for i in k:
+          cw.writerow(i)
+        f.close()
+
   else:
     print('OPTION NOT AVAILABLE!!!!!!!!!')
 print('Your table is prepared')
