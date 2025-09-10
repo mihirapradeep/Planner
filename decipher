@@ -97,17 +97,17 @@ while True:
           print(i[j],end='\t\t')
       f.close()
 
-print('\n')
-break
-elif a==2:
-  p=input('Enter Table Name:') 
-  f= open(p+'.csv','r')
-  cr=csv.reader(f)
-  for i in cr:
-    print('\n')
-    for j in range(len(i)):
-      print(i[j],end='\t\t')
-  f.close()
+      print('\n')
+      break
+    elif a==2:
+      p=input('Enter Table Name:') 
+      f= open(p+'.csv','r')
+      cr=csv.reader(f)
+      for i in cr:
+        print('\n')
+        for j in range(len(i)):
+          print(i[j],end='\t\t')
+      f.close()
   while True:
     print('\nDo you want to make any changes')
     n= input('Enter n if NO: ')
