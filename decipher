@@ -108,26 +108,26 @@ while True:
         for j in range(len(i)):
           print(i[j],end='\t\t')
       f.close()
-  while True:
-    print('\nDo you want to make any changes')
-    n= input('Enter n if NO: ')
-    if n in'nN':
-      break
-    else:
-      print('1. Add')
-      print('2. Delete')
-      a=int(input('Enter Choice: '))
-      if a==1:
-        f= open(p+'.csv','a',newline='')
-        cw=csv.writer(f)
-        k=input('Task: ')
-        j=int(input('Start Time: '))
-        l=int(input('End Time: '))
-      
-        t=l-j
-        g=[k,j,l,t]
-        cw.writerow(g)
-        f.close()
+      while True:
+        print('\nDo you want to make any changes')
+        n= input('Enter n if NO: ')
+        if n in'nN':
+          break
+        else:
+          print('1. Add')
+          print('2. Delete')
+          a=int(input('Enter Choice: '))
+          if a==1:
+            f= open(p+'.csv','a',newline='')
+            cw=csv.writer(f)
+
+            k=input('Task: ')
+            j=int(input('Start Time: '))
+            l=int(input('End Time: '))
+            t=l-j
+            g=[k,j,l,t]
+            cw.writerow(g)
+            f.close()
       elif a==2:
         f= open(p+'.csv','r')
         cr=csv.reader(f)
