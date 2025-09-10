@@ -88,14 +88,14 @@ while True:
 
         else:
           print('OPTION NOT AVAILABLE!!!!!!!!!')
-print('Your table is prepared')
-f= open(p+'.csv','r')
-cr=csv.reader(f)
-for i in cr:
-  print('\n')
-  for j in range(len(i)):
-    print(i[j],end='\t\t')
-f.close()
+      print('Your table is prepared')
+      f= open(p+'.csv','r')
+      cr=csv.reader(f)
+      for i in cr:
+        print('\n')
+        for j in range(len(i)):
+          print(i[j],end='\t\t')
+      f.close()
 
 print('\n')
 break
